@@ -1,7 +1,6 @@
 var harryPotter = {
     nome: "Harry Potter",
-    imagem:
-        "https://www.icegif.com/wp-content/uploads/2022/02/icegif-203.gif",
+    imagem: "https://www.icegif.com/wp-content/uploads/2022/02/icegif-203.gif",
     atributos: {
         ataque: 5,
         defesa: 9,
@@ -21,26 +20,35 @@ var hermioneGranger = {
 
 var ronyWeasley = {
     nome: "Rony Weasley",
-    imagem:
-        "https://i.pinimg.com/originals/78/de/fc/78defcfc31c63a1737f86de046067858.gif",
+    imagem: "https://i.pinimg.com/originals/78/de/fc/78defcfc31c63a1737f86de046067858.gif",
     atributos: {
-        ataque: 9,
+        ataque: 5,
         defesa: 8,
         magia: 2
     }
 };
 
+var dumbledore = {
+  nome: "Dumbledore",
+  imagem: "https://media.tenor.com/ZIowZJymZaIAAAAC/harry-potter-dumbledore.gif",
+  atributos: {
+      ataque: 9,
+      defesa: 8,
+      magia: 10
+  }
+};
+
 var cartaMaquina;
 var cartaJogador;
-var cartas = [harryPotter, hermioneGranger, ronyWeasley];
+var cartas = [harryPotter, hermioneGranger, ronyWeasley, dumbledore];
 
 function sortearCarta() {
-    var numeroCartaMaquina = parseInt(Math.random() * 3);
+    var numeroCartaMaquina = parseInt(Math.random() * 4);
     cartaMaquina = cartas[numeroCartaMaquina];
   
-    var numeroCartaJogador = parseInt(Math.random() * 3);
+    var numeroCartaJogador = parseInt(Math.random() * 4);
     while (numeroCartaJogador == numeroCartaMaquina) {
-      numeroCartaJogador = parseInt(Math.random() * 3);
+      numeroCartaJogador = parseInt(Math.random() * 4);
     }
     cartaJogador = cartas[numeroCartaJogador];
     console.log(cartaJogador);
