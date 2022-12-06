@@ -118,3 +118,35 @@ form {
 .carta-status p {
     margin-bottom: 2rem;
 }
+
+#listaCartasJogador {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+}
+
+li {
+    width: 160px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    position: relative;
+    align-items: flex-end;
+    border-radius: 33px;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    display: flex;
+    background-position-x: 5px;
+    background-position-y: 37px;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+section {
+    background-color: #0f2214;
+    border-radius: 10px;
+    padding-right: 20px;
+    border-style: groove;
+}
