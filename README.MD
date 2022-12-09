@@ -1,13 +1,35 @@
-# Imersão_Dev Alura
+<h1 align="center"> Imersão Dev </h1>
 
-![preview](./.github/preview.png)
+<p align="center">
+Evento exclusivo e gratuito, promovido pela Alura para ensino de tecnologias WEB.
+</p>
 
-Projeto construido no evento Imersão_Dev da Alura.
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>
+</p>
 
-[Clique aqui para acessar](https://danilofelicio.github.io/ImersaoAlura/)
+<br>
 
-## Tecnologias
+<p align="center">
+  <img alt="Curriculo" src=".github/preview.png" width="100%">
+</p>
 
--HTML
--CSS
--Git/Github
+<br>
+
+## 🔗 Link acesso ao site
+- <a href="https://danilofelicio.github.io/ImersaoAlura/" target="_blank" style="font-size:20px;">Clique aqui</a>
+
+<br>
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- HTML e CSS
+- JavaScript
+- Git e Github
+
+## 💻 Projeto
+
+Projeto do jogo de cartas super trunfo, onde cartas são sorteadas para cada jogador. Deve-se escolher uma carta e seu atributo, onde o atributo de maior valor vence a partida.
