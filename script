@@ -132,18 +132,18 @@ function jogar() {
   exibirCartaMaquina();
 }
 
-function exibirCartaJogador() {
+function exibirCartaJogador(posicaoCarta) {
   var divCartaJogador = document.getElementById("carta-jogador");
-  divCartaJogador.style.backgroundImage = `url(${cartaJogador.imagem})`;
+  divCartaJogador.style.backgroundImage = `url(${cartaJogador[posicaoCarta].imagemAnimada})`;
   var moldura = '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent.png" style=" width: inherit; height: inherit; position: absolute;">';
   var tagHTML = "<div id='opcoes' class='carta-status'>";
 
   var opcoesTexto = "";
 
-  for (var atributo in cartaJogador.atributos) {
-    opcoesTexto += "<input type='radio' name='atributo' value='" + atributo + "'>" + atributo + " " + cartaJogador.atributos[atributo] + "<br>";
+  for (var atributo in cartaJogador[posicaoCarta].atributos) {
+    opcoesTexto += "<input type='radio' name='atributo' value='" + atributo + "'>" + atributo + " " + cartaJogador[posicaoCarta].atributos[atributo] + "<br>";
   }
-  var nome = `<p class="carta-subtitle">${cartaJogador.nome}</p>`;
+  var nome = `<p class="carta-subtitle">${cartaJogador[posicaoCarta].nome}</p>`;
 
   divCartaJogador.innerHTML = moldura + nome + tagHTML + opcoesTexto + "</div>";
 }
@@ -165,19 +165,36 @@ function exibirCartaMaquina() {
 
 function exibirBaralhoJogador() {
   
-  var linkListaCartasJogador = window.document.getElementById("listaCartasJogador");
+  var linkListaCartasJogador = window.document.getElementById("listaCartasJogador")
   
   for (let posicao = 0; posicao < cartaJogador.length; posicao++) {
     
     let item = window.document.createElement("li")
+    item.id = posicao
     item.style.backgroundImage = `url(${cartaJogador[posicao].imagemComun})`
-    item.innerHTML = '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent.png" style=" width: inherit; height: inherit; position: absolute;">'
-    linkListaCartasJogador.appendChild(item)
-    
+    var moldura = `<img id="${posicao}" src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent.png" style=" width: inherit; height: inherit; position: absolute;">`
+
+
+    var tagHTML = "<div id='opcoes' class='carta-status-baralho'>";
+
+    var opcoesTexto = "";
+  
+    for (var atributo in cartaJogador[posicao].atributos) {
+      opcoesTexto += "<input type='radio' name='atributo' value='" + atributo + "'>" + atributo + " " + cartaJogador[posicao].atributos[atributo] + "<br>";
+    }
+    var nome = `<p class="carta-subtitle-baralho">${cartaJogador[posicao].nome}</p>`;
+  
+    item.innerHTML = moldura + nome + tagHTML + opcoesTexto + "</div>";
+
+
+    linkListaCartasJogador.appendChild(item); 
   }
   
+  linkListaCartasJogador.addEventListener("click", function(evento){
+    exibirCartaJogador(Number(evento.target.id))
+  })
 }
-//eventlistener na lista para cada elemento....tem q colocar o id na imagem e no li
-//mostrar cartas normais no baralho e gif somente na carta escolhida para a jogada.
-//mostrar bordas da lista de cartas do jogador
+//mudar comparação dos atributos das cartas para não precisar escolher um atributo para jogar. exemplo, comparar o ataque e defesa e magia.
+//mudar input dos atributos para paragrafo
+//Desativar botão sortear cartas depois de sortear.
 //Jogar novamente sem ter que atualizar a página.
